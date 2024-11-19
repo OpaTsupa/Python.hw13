@@ -17,7 +17,6 @@ class CaesarsCipher:
         )
         self.all_symbols_len: int = len(self.all_symbols)
         self.enc_key: int = random.randint(0, self.all_symbols_len - 1)
- #       self.enc_key = 34
 
     def encrypt(self, message_to_encrypt: str) -> str:
         """
@@ -59,8 +58,6 @@ class CaesarsCipher:
             str: Дешифрованное сообщение с подобранным ключом.
         """
         dictionary = enchant.Dict("en_US")
-#        key: int = 0
-#        decrypt_message: str = ''
         for key in range(self.all_symbols_len):
             decrypt_result: list[str] = []
             for symbol in message_to_decrypt:
